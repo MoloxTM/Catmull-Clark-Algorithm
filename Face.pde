@@ -28,7 +28,7 @@ class Face {
   }
   
   void draw() {
-    beginShape(LINES);
+    beginShape();
       stroke(0, 0, 0);
       strokeWeight(1);
       fill(c.r, c.g, c.b, c.opacity);
