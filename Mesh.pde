@@ -52,7 +52,6 @@ class Mesh{
         facesNearPoint.add(face.fp);
       }
       
-      int i = 0;
       
       for(Edge edge : face.getEdges()) {
       
@@ -65,7 +64,6 @@ class Mesh{
           //print("\nAjout de :" + edge.edgePoint);
         }
         
-        i++;
       }
     }
     
@@ -125,23 +123,17 @@ class Mesh{
   
   ArrayList<Face> updateMesh(ArrayList<Face> oldFace) {
     ArrayList<Face> newFaces = new ArrayList<>();    
-    int j  = 1;
-    int h = 1;
-    int p = 0;
     //Calcul des edgesPoints
     for(Face f : oldFace) {
       ArrayList<Edge> edgesOfFace = f.getEdges();
       for(Edge e : edgesOfFace) {
         ArrayList<Face> faceProches = faceNeighboor(e);
         //print("\nPour edge n°:"+p);
-        p++;
         PVector newEP = e.edgePoint(faceProches.get(0), faceProches.get(1));
         f.edgepoints.add(newEP);
         e.edgePoint = newEP;
         //print("\nedge point n°:" + j + "|" +e.edgePoint + " de la face n°"+h+"\n");        
-        j++;
       }
-      h++;
     }
     int k = 0;
     for(Face f : oldFace){

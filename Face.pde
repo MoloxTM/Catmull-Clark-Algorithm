@@ -13,7 +13,7 @@ class Face {
     this.points = points;
     this.fp = initFacePoint();
     //print("Je créer la face\n");
-    c = new Color((int)random(0, 255), (int)random(0, 255), (int)random(0, 255), 50);
+    c = new Color((int)random(0, 0), (int)random(0, 0), (int)random(255, 255), 255);
     this.edgepoints = new ArrayList<>();
   }
   
@@ -23,14 +23,18 @@ class Face {
     this.numero = 0;
     this.points = null;
     this.fp = null;
-    c = new Color((int)random(0, 255), (int)random(0, 255), (int)random(0, 255), 50);
+    c = new Color((int)random(0, 0), (int)random(0, 0), (int)random(255, 255), 255);
     this.edgepoints = new ArrayList<>();
   }
   
   void draw() {
+<<<<<<< Updated upstream
     beginShape();
+=======
+    beginShape(drawMethod);
+>>>>>>> Stashed changes
       stroke(0, 0, 0);
-      strokeWeight(1);
+      strokeWeight(strokeWeight);
       fill(c.r, c.g, c.b, c.opacity);
       vertex(points.get(0).x, points.get(0).y, points.get(0).z);
       vertex(points.get(1).x, points.get(1).y, points.get(1).z);

@@ -10,6 +10,7 @@ class Axes {
   void display() {
     beginShape(LINES);
       stroke(138,43,226);
+      strokeWeight(1);
       vertex(0, 0, 0);
       vertex(x, 0, 0);
       stroke(0, 255, 0);
